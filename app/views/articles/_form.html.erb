@@ -1,0 +1,30 @@
+<%= form_with model: @article do |form| %>
+    <div>
+        <%= form.label :title%>
+        <%= form.text_field :title%>
+        <% if article.errors[:title].any? %>
+            <div class="error">
+                <% article.errors[:title].each do |msg| %>
+                <p>Title <%= msg %></p>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :body%>
+        <%= form.text_field :body%>
+        <% if article.errors[:title].any? %>
+            <div class="error">
+                <% article.errors[:body].each do |msg| %>
+                <p>Body <%= msg %></p>
+                <% end %>
+            </div>
+        <% end %>
+
+    </div>
+
+    <div>
+        <%= form.submit%>
+    </div>
+<%end%>
